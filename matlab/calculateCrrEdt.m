@@ -22,6 +22,39 @@ M_h = mean([6.0702, 6.1031 6.1364]);
 
 mu = (M_h * g - W * sin(deg2rad(a))) / W * cos(deg2rad(a))
 
+%% Rodger w/ spring at 241.1 m/min
+M_r = 67.4;
+M_b = 10.55;
+W = (M_r + M_b) * g;
+a = 4.13;
+
+M_h = mean(Fnet); % 5.7469
+
+mu = (M_h * g - W * sin(deg2rad(a))) / W * cos(deg2rad(a))
+
+%% Rodger w/o spring at 241.1 m/min
+M_r = 67.4;
+M_b = 10.491;
+W = (M_r + M_b) * g;
+a = 4.13;
+
+M_h = mean(Fnet_sans); % 5.8362
+
+mu = (M_h * g - W * sin(deg2rad(a))) / W * cos(deg2rad(a))
+
+%% Drew w/o spring at 241.1 m/min
+
+M_r = 67.4;
+M_b = 10.491;
+W = (M_r + M_b) * g;
+a = 4.13;
+
+M_h = mean(Fnet_sans); % 5.8362
+V_b1 = mean([241.65 241.57 241.50 241.64 241.58 241.34 240.84 242.13 242.14]);
+V_b2 = mean([240.86 241.37 241.65 240.96 241.01 241.08 240.82 241.16 241.41]);
+
+mu = (M_h * g - W * sin(deg2rad(a))) / W * cos(deg2rad(a))
+
 %% 100 W at 96.4 m/min
 M_h = 5.81;
 V_b = mean([96.81 96.43]) / 60;
