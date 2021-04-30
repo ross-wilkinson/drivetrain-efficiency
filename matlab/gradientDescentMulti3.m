@@ -1,4 +1,4 @@
-function [theta_history, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters)
+function [theta_history, J_history] = gradientDescentMulti3(X, y, theta, alpha, num_iters)
 %GRADIENTDESCENTMULTI Performs gradient descent to learn theta
 % theta = GRADIENTDESCENTMULTI(x, y, theta, alpha, num_iters) updates
 % theta by taking num_iters gradient steps with learning rate alpha
@@ -28,10 +28,10 @@ for iter = 1:num_iters
     
     % Calculate the contribution of each element in theta to the total
     % magnitude and direction of error
-    delta(1) = sum([h(1)-y(1) h(2)-y(2) h(5)-y(5) h(6)-y(6)])/m;
-    delta(2) = sum([h(3)-y(3) h(4)-y(4) h(7)-y(7) h(8)-y(8)])/m;
-    delta(3) = sum([h(1)-y(1) h(3)-y(3) h(5)-y(5) h(7)-y(7)])/m;
-    delta(4) = sum([h(2)-y(2) h(4)-y(4) h(6)-y(6) h(8)-y(8)])/m;
+    delta(1) = sum([h(1)-y(1) h(2)-y(2) h(5)-y(5) h(6)-y(6) h(9)-y(9) h(10)-y(10)])/m;
+    delta(2) = sum([h(3)-y(3) h(4)-y(4) h(7)-y(7) h(8)-y(8) h(11)-y(11) h(12)-y(12)])/m;
+    delta(3) = sum([h(1)-y(1) h(3)-y(3) h(5)-y(5) h(7)-y(7) h(9)-y(9) h(11)-y(11)])/m;
+    delta(4) = sum([h(2)-y(2) h(4)-y(4) h(6)-y(6) h(8)-y(8) h(10)-y(10) h(12)-y(12)])/m;
     
     % Update theta
     theta(1) = theta(1)-alpha*delta(1);
