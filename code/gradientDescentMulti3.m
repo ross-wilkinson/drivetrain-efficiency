@@ -34,13 +34,25 @@ for iter = 1:num_iters
     delta(4) = sum([h(2)-y(2) h(4)-y(4) h(6)-y(6) h(8)-y(8) h(10)-y(10) h(12)-y(12)])/m;
     
     % Update theta
+%     if theta(1) < 1
+%         theta(1) = theta(1)-alpha*-delta(1);
+%     else
+%         theta(1) = theta(1)-alpha*delta(1);
+%     end
+%     
+%     if theta(2) < 1
+%         theta(2) = theta(2)-alpha*-delta(2);
+%     else
+%         theta(2) = theta(2)-alpha*delta(2);
+%     end
+    
     theta(1) = theta(1)-alpha*delta(1);
     theta(2) = theta(2)-alpha*delta(2);
     theta(3) = theta(3)-alpha*delta(3);
     theta(4) = theta(4)-alpha*delta(4);
 
     % Save the cost J in every iteration    
-    J_history(iter) = computeCostMulti(X, y, theta);
+    J_history(iter) = computeCostMultiPenalty(X, y, theta);
     
     % Save theta values in every iteration
     theta_history(iter,:) = theta;

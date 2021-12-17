@@ -11,7 +11,7 @@
 %   y - Mechanical power measured by the power meter
 
 %% Load and set measured and calculated power variables
-load('data.mat')
+load('data422.mat')
 X = t.powerCalc;
 y = t.powerMeas;
 
@@ -70,7 +70,7 @@ view(-150,30)
 set(gcf,'color','w')
 box on
 cd('/Users/rosswilkinson/Google Drive/projects/drivetrain-efficiency/results')
-export_fig('fig_surf_J','-png','-eps','-cmyk','-r600')
+% export_fig('fig_surf_J','-png','-eps','-cmyk','-r600')
 
 % Contour plot
 figure;
@@ -87,4 +87,4 @@ plot(theta_history(:,2), theta_history(:,4),'m-o')
 
 set(gcf,'color','w')
 cd('/Users/rosswilkinson/Google Drive/projects/drivetrain-efficiency/results')
-export_fig('fig_contour_J','-png','-eps','-cmyk','-r600')
+% export_fig('fig_contour_J','-png','-eps','-cmyk','-r600')
